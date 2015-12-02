@@ -15,17 +15,21 @@ define([
             if (!this.fin) {
                 throw new Error('Property "fin" definition is required.');
             }
-            _.bindAll(this, 'render', 'finalize');
+            _.bindAll(this, 'beforeRender', 'render', 'finalize');
             if (options && 'on' in options) {
                 // イベント監視
                 var fireEvent = Backbone.appName + ':' + options.on;
-                Backbone.mediator.once(fireEvent, this.render);
+                Backbone.mediator.once(fireEvent, this.beforeRender);
             }
         },
         // 終わったら呼ぶ
         finalize: function() {
             // 終わったよイベント発火
             Backbone.mediator.trigger(Backbone.appName + ':' + this.fin);
+        },
+        // 拡張性を大事に
+        beforeRender: function() {
+            this.render();
         },
         // 各Viewでrenderを実装する
         render: function() {
