@@ -14,7 +14,7 @@ define([
         render: function() {
             this.$el.hide().html(template).fadeIn('normal');
 
-            this.finish();
+            this.finalize();
         }
     });
 

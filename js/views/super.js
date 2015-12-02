@@ -13,7 +13,10 @@ define([
         fin: undefined,
         // デフォルトの初期化処理
         initialize: function(options) {
-            _.bindAll(this, 'render');
+            if (!this.fin) {
+                throw new Error('Property "fin" definition is required.');
+            }
+            _.bindAll(this, 'render', 'finalize');
             if (options && 'on' in options) {
                 // イベント監視
                 var fireEvent = Backbone.appName + ':' + options.on;
@@ -21,13 +24,13 @@ define([
             }
         },
         // 終わったら呼ぶ
-        finish: function() {
+        finalize: function() {
             // 終わったよイベント発火
             Backbone.mediator.trigger(Backbone.appName + ':' + this.fin);
         },
         // 各Viewでrenderを実装する
         render: function() {
-            this.finish();
+            this.finalize();
         }
     };
 

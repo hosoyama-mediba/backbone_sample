@@ -15,7 +15,7 @@ define([
             // DOM操作
             this.$el.hide().html(template).fadeIn('normal');
 
-            this.finish();
+            this.finalize();
         }
     });
 
