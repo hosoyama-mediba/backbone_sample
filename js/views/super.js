@@ -4,9 +4,8 @@
 define([
     'jquery',
     'underscore',
-    'backbone',
-    'hbars!templates/body'
-], function($, _, Backbone, template) {
+    'backbone'
+], function($, _, Backbone) {
     'use strict';
 
     var SuperView = {
