@@ -3,6 +3,7 @@
 define([
     'underscore',
     'backbone',
+    'views/super',
     'views/entry',
     'views/header',
     'views/body',
@@ -11,6 +12,7 @@ define([
 ], function(
     _,
     Backbone,
+    SuperView,
     EntryView,
     HeaderView,
     BodyView,
@@ -32,6 +34,9 @@ define([
 
     // 異なるView間でイベントのやり取りをするためのオブジェクト
     Backbone.mediator = _.extend({}, Backbone.Events);
+
+    // SuperViewを親クラスとしてMixinする（気をつけないと危険）
+    _.extend(Backbone.View.prototype, SuperView);
 
     // ルータの初期化
     var initialize = function() {
