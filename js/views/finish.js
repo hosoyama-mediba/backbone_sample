@@ -12,7 +12,7 @@ define([
         render: function() {
             // 全ての描画が終わった時の処理をここに書く
 
-            this.finalize();
+            return this.finalize();
         }
     });
 

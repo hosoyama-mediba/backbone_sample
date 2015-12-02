@@ -13,7 +13,8 @@ define([
         fin: 'footer',
         render: function() {
             this.$el.hide().html(template).fadeIn('normal');
-            this.finalize();
+
+            return this.finalize();
         }
     });
 

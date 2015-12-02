@@ -19,7 +19,7 @@ define([
         render: function() {
             // 描画開始前の処理があればここに書く
 
-            this.finalize();
+            return this.finalize();
         }
     });
 

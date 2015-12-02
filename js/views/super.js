@@ -26,14 +26,15 @@ define([
         finalize: function() {
             // 終わったよイベント発火
             Backbone.mediator.trigger(Backbone.appName + ':' + this.fin);
+            return this;
         },
         // 拡張性を大事に
         beforeRender: function() {
-            this.render();
+            return this.render();
         },
         // 各Viewでrenderを実装する
         render: function() {
-            this.finalize();
+            return this.finalize();
         }
     };
 
