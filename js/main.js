@@ -16,10 +16,6 @@ require.config({
         jquery: {
             exports: '$'
         },
-        'jquery.cookie': {
-            deps: ['jquery'],
-            exports: 'jquery'
-        },
         underscore: {
             exports: '_'
         },
