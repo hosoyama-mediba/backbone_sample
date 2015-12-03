@@ -1,5 +1,6 @@
 // app
 // App
+/*
 define([
     'underscore',
     'backbone',
@@ -20,6 +21,19 @@ define([
     FinishView
 ) {
     'use strict';
+});
+*/
+define(function(require, exports, module) {
+    'use strict';
+
+    var _          = require('underscore'),
+        Backbone   = require('backbone'),
+        SuperView  = require('views/super'),
+        EntryView  = require('views/entry'),
+        HeaderView = require('views/header'),
+        BodyView   = require('views/body'),
+        FooterView = require('views/footer'),
+        FinishView = require('views/finish');
 
     // ルータ設定（pushStateに対応できる）
     var AppRouter = Backbone.Router.extend({
