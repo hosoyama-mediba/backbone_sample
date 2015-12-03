@@ -47,10 +47,18 @@ define([
 
             // 各View初期化時にどのViewの後に処理を開始するか決めることが可能
             var entryView  = new EntryView();
-            var headerView = new HeaderView({on: entryView.fin});
-            var bodyView   = new BodyView({on: headerView.fin});
-            var footerView = new FooterView({on: bodyView.fin});
-            var finishView = new FinishView({on: footerView.fin});
+            var headerView = new HeaderView({
+                on: entryView.fin
+            });
+            var bodyView   = new BodyView({
+                on: headerView.fin
+            });
+            var footerView = new FooterView({
+                on: bodyView.fin
+            });
+            var finishView = new FinishView({
+                on: footerView.fin
+            });
 
             // entryだけrenderした後はイベント駆動
             entryView.render();
