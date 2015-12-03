@@ -26,12 +26,9 @@ require.config({
         Handlebars: {
             exports: 'Handlebars'
         }
+    },
+    deps: ['app'],
+    callback: function(App) {
+        App.initialize();
     }
-});
-
-// アプリを初期化する
-require([
-    'app'
-], function(App) {
-    App.initialize();
 });
