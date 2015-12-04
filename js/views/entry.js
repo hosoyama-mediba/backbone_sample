@@ -16,6 +16,9 @@ define([
             // 親を呼ぶこともできる
             EntryView.__super__.initialize.apply(this, arguments);
         },
+        prepare: function() {
+            return this.render();
+        },
         render: function() {
             // 描画開始前の処理があればここに書く
 

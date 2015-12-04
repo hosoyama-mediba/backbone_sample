@@ -11,6 +11,9 @@ define([
     var BodyView = Backbone.View.extend({
         el: '.js-body',
         fin: 'body',
+        prepare: function() {
+            return this.render();
+        },
         render: function() {
             this.$el.hide().html(template).fadeIn('normal');
 

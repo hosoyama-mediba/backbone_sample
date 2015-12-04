@@ -11,6 +11,9 @@ define([
     var FooterView = Backbone.View.extend({
         el: '.js-footer',
         fin: 'footer',
+        prepare: function() {
+            return this.render();
+        },
         render: function() {
             this.$el.hide().html(template).fadeIn('normal');
 

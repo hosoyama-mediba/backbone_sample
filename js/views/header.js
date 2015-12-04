@@ -11,6 +11,9 @@ define([
     var HeaderView = Backbone.View.extend({
         el: '.js-header',
         fin: 'header',
+        prepare: function() {
+            return this.render();
+        },
         render: function() {
             // DOM操作
             this.$el.hide().html(template).fadeIn('normal');
