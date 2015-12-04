@@ -38,11 +38,6 @@ define([
         }
     };
 
-    // コントローラでextendしてやる
-    //_.extend(Backbone.View.prototype, PortalView);
-
     return SuperView;
 });
-
-// Viewを拡張したいなんて時は気をつけながらも可能
 
