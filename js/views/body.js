@@ -15,9 +15,11 @@ define([
             return this.render();
         },
         render: function() {
-            this.$el.hide().html(template).fadeIn('normal');
-
-            return this.finalize();
+            var _this = this;
+            this.$el.hide().html(template).fadeIn('normal', function() {
+                _this.finalize();
+            });
+            return this;
         }
     });
 

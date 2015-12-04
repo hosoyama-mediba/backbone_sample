@@ -16,9 +16,11 @@ define([
         },
         render: function() {
             // DOM操作
-            this.$el.hide().html(template).fadeIn('normal');
-
-            return this.finalize();
+            var _this = this;
+            this.$el.hide().html(template).fadeIn('normal', function() {
+                _this.finalize();
+            });
+            return this;
         }
     });
 
