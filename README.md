@@ -25,8 +25,12 @@ Viewは遅延読み込み等があり、一回DOMを構築して終わりでは�
 * __jQuery__
  * 内部で使っているので知っているといい
 
-* __undersocre__
+* __Undersocre.js__
  * 内部で使っているので知っているといい
+
+* __RequireJS__
+ * 複数のライブラリを非同期で読み込んでくれる
+ * モジュールをAMD（Asynchronous Module Definition）で定義するといい感じで読み込んでくれる
 
 * __Backbone.View__
  * DOMと結びつけて表示系の処理を担う
