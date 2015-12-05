@@ -19,7 +19,7 @@ define([
             if (options && 'on' in options) {
                 // イベント監視
                 var fireEvent = Backbone.appName + ':' + options.on;
-                Backbone.mediator.once(fireEvent, this.prepare);
+                Backbone.mediator.on(fireEvent, this.prepare);
             }
         },
         // 終わったら呼ぶ

@@ -52,30 +52,29 @@ define(function(require, exports, module) {
     // SuperViewを親クラスとしてMixinする（気をつけないと危険）
     _.extend(Backbone.View.prototype, SuperView);
 
+    // どのViewの後に処理を開始するか決める
+    var entryView  = new EntryView();
+    var headerView = new HeaderView({
+        on: entryView.fin
+    });
+    var bodyView   = new BodyView({
+        on: headerView.fin
+    });
+    var footerView = new FooterView({
+        on: bodyView.fin
+    });
+    var finishView = new FinishView({
+        on: footerView.fin
+    });
+
     // ルータの初期化
     var initialize = function() {
         var appRouter = new AppRouter();
 
         // defaultのコールバック
         appRouter.on('route:default', function(route) {
-
-            // 各View初期化時にどのViewの後に処理を開始するか決めることが可能
-            var entryView  = new EntryView();
-            var headerView = new HeaderView({
-                on: entryView.fin
-            });
-            var bodyView   = new BodyView({
-                on: headerView.fin
-            });
-            var footerView = new FooterView({
-                on: bodyView.fin
-            });
-            var finishView = new FinishView({
-                on: footerView.fin
-            });
-
-            // entryだけrenderした後はイベント駆動
-            entryView.render();
+            // entryを呼び出す
+            entryView.prepare(route);
         });
 
         // creditのコールバック
