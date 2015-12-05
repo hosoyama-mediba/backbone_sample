@@ -59,7 +59,9 @@ define(function(require, exports, module) {
 
         // creditのコールバック
         appRouter.on('route:credit', function() {
+            $('.js-credit').show();
             alert('Presented by hosoyama-mediba.');
+            $('.js-credit').hide();
         });
 
         // 監視を開始
