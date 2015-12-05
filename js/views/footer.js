@@ -1,5 +1,8 @@
-// views/footer
-// FooterView
+/**
+ * @fileOverview フッタ描画View
+ * @file         views/footer
+ * @author       Terunobu Hosoyama <hosoyama@mediba.jp>
+ */
 define([
     'jquery',
     'underscore',

@@ -1,6 +1,8 @@
-// js/main
-
-// require.jsの設定
+/**
+ * @fileOverview RequireJSの設定
+ * @file         main
+ * @author       Terunobu Hosoyama <hosoyama@mediba.jp>
+ */
 require.config({
     baseUrl: 'js',
     paths: {

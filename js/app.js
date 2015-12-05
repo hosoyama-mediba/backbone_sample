@@ -1,28 +1,8 @@
-// app
-// App
-/*
-define([
-    'underscore',
-    'backbone',
-    'views/super',
-    'views/entry',
-    'views/header',
-    'views/body',
-    'views/footer',
-    'views/finish'
-], function(
-    _,
-    Backbone,
-    SuperView,
-    EntryView,
-    HeaderView,
-    BodyView,
-    FooterView,
-    FinishView
-) {
-    'use strict';
-});
-*/
+/**
+ * @fileOverview アプリケーションのコントローラ
+ * @file         app
+ * @author       Terunobu Hosoyama <hosoyama@mediba.jp>
+ */
 define(function(require, exports, module) {
     'use strict';
 
@@ -53,18 +33,18 @@ define(function(require, exports, module) {
     _.extend(Backbone.View.prototype, SuperView);
 
     // どのViewの後に処理を開始するか決める
-    var entryView  = new EntryView();
-    var headerView = new HeaderView({
-        on: entryView.fin
+    var entry = new EntryView();
+    var header = new HeaderView({
+        on: entry.fin
     });
-    var bodyView   = new BodyView({
-        on: headerView.fin
+    var body = new BodyView({
+        on: header.fin
     });
-    var footerView = new FooterView({
-        on: bodyView.fin
+    var footer = new FooterView({
+        on: body.fin
     });
-    var finishView = new FinishView({
-        on: footerView.fin
+    var finish = new FinishView({
+        on: footer.fin
     });
 
     // ルータの初期化
@@ -74,7 +54,7 @@ define(function(require, exports, module) {
         // defaultのコールバック
         appRouter.on('route:default', function(route) {
             // entryを呼び出す
-            entryView.prepare(route);
+            entry.prepare(route);
         });
 
         // creditのコールバック

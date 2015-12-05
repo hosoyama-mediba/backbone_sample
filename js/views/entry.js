@@ -1,5 +1,9 @@
-// views/entry
-// EntryView
+/**
+ * @fileOverview 最初にコントローラから呼ばれるView
+ *               アプリの共通系の前処理を行う
+ * @file         views/entry
+ * @author       Terunobu Hosoyama <hosoyama@mediba.jp>
+ */
 define([
     'jquery',
     'underscore',
@@ -7,18 +11,40 @@ define([
 ], function($, _, Backbone) {
     'use strict';
 
+    /**
+     * EntryView
+     *
+     * @type {Backbone.View}
+     */
     var EntryView = Backbone.View.extend({
         fin: 'entry',
-        // オーバーライドもできる
+
+        /**
+         * 初期化
+         *
+         * @constructor
+         */
         initialize: function() {
             // do something initialize
 
             // 親を呼ぶこともできる
             EntryView.__super__.initialize.apply(this, arguments);
         },
+
+        /**
+         * 前処理
+         *
+         * @return this
+         */
         prepare: function() {
             return this.render();
         },
+
+        /**
+         * 描画処理
+         *
+         * @return this
+         */
         render: function() {
             // 描画開始前の処理があればここに書く
 

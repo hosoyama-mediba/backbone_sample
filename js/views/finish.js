@@ -1,5 +1,8 @@
-// views/finish
-// FinishView
+/**
+ * @fileOverview アプリの描画が全て感k料した場合に呼ばれるView
+ * @file         views/finish
+ * @author       Terunobu Hosoyama <hosoyama@mediba.jp>
+ */
 define([
     'jquery',
     'underscore',

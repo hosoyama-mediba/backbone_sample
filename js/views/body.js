@@ -1,5 +1,8 @@
-// views/body
-// BodyView
+/**
+ * @fileOverview ボディ描画View
+ * @file         views/body
+ * @author       Terunobu Hosoyama <hosoyama@mediba.jp>
+ */
 define([
     'jquery',
     'underscore',

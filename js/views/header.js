@@ -1,5 +1,8 @@
-// views/header
-// HeaderView
+/**
+ * @fileOverview ヘッダ描画View
+ * @file         views/header
+ * @author       Terunobu Hosoyama <hosoyama@mediba.jp>
+ */
 define([
     'jquery',
     'underscore',
