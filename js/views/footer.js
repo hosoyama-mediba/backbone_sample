@@ -17,9 +17,15 @@ define([
         render: function() {
             var _this = this;
             this.$el.hide().html(template).fadeIn('normal', function() {
+                Backbone.mediator.on('resize', _this.onResize, this);
                 _this.finalize();
             });
             return this;
+        },
+        onResize: function(e) {
+            //console.log('foot:resize');
+            // 他のVIEWに影響を与えずに個別にON/OFFできる
+            Backbone.mediator.off('resize', this.onResize, this);
         }
     });
 

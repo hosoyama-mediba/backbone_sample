@@ -17,9 +17,13 @@ define([
         render: function() {
             var _this = this;
             this.$el.hide().html(template).fadeIn('normal', function() {
+                Backbone.mediator.on('resize', _this.onResize, this);
                 _this.finalize();
             });
             return this;
+        },
+        onResize: function(e) {
+            //console.log('body:resize');
         }
     });
 

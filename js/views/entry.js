@@ -22,6 +22,19 @@ define([
         render: function() {
             // 描画開始前の処理があればここに書く
 
+            // リサイズイベントリスナ
+            var timerId;
+            $(window).on('resize', function(e) {
+                // 発火タイミング調整
+                if (timerId) {
+                    clearTimeout(timerId);
+                }
+                timerId = setTimeout(function() {
+                    // これを監視すれば調整済みのイベントを受け取れる
+                    Backbone.mediator.trigger('resize', e);
+                }, 200);
+            });
+
             return this.finalize();
         }
     });
