@@ -17,6 +17,11 @@ define([
      * @type {Backbone.View}
      */
     var EntryView = Backbone.View.extend({
+        /**
+         * 終了時イベント名
+         *
+         * @type string
+         */
         fin: 'entry',
 
         /**
