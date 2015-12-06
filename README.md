@@ -39,31 +39,29 @@ Viewは遅延読み込み等があり、一回DOMを構築して終わりでは�
 
 * __Backbone.View__
  * DOMと結びつけて表示系の処理を担う
- * イベント駆動型のサンプル作った。
+ * イベント駆動型のサンプルあり
 
 * __Backbone.Model__
  * 「データ」の1単位
- * データの入出力に関わる処理も担う
+ * データの入出力（サーバとの通信）に関わる処理も担う
 
 * __Backbone.Collection__
  * Modelのコレクションオブジェクト
- * データの入出力に関わる処理も担う
- * データが複数（配列）の場合はこれ
+ * モデルが複数（配列）になる場合はこちらで制御する
 
 * __Backbone.Events__
  * イベントを監視したり発火したりして非同期処理を綺麗に書けたりする
- * デフォルトではView間でイベントのやり取りはできない
+ * デフォルトではView間でイベントのやり取りはできないが、サンプルでは機能拡張して可能にした
 
 * __Backbone.Router__
- * hashchangeかpopStateを監視してイベント通知してくれるのでSPA（Single Page Application）作るのに便利
- * hashchange版のサンプルあり
- * pushStateを使うとpjaxなサイトにできる
+ * hashchangeかpopStateを監視して通知してくれるのでSPA（Single Page Application）作るのに便利
+ * popState版のサンプルあり
 
 * __Backbone.History__
- * Routerがいろいろ操作してくれる履歴
+ * Routerが操作してくれる履歴
  * 監視を開始したら自分で使うことはあまりない
 
-## サンプル
+## サンプルコード
 
 ### リポジトリ
 https://github.com/hosoyama-mediba/backbone_sample

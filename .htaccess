@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_URI} ^/page[1-5]$
+RewriteRule ^page[1-5]$ / [L]

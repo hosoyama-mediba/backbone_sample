@@ -22,6 +22,7 @@ define(function(require, exports, module) {
             '*route': 'default'
         }
     });
+    Backbone.router = new AppRouter();
 
     // 名前を付けておく
     Backbone.appName = 'portal';
@@ -49,16 +50,15 @@ define(function(require, exports, module) {
 
     // ルータの初期化
     var initialize = function() {
-        var appRouter = new AppRouter();
 
         // defaultのコールバック
-        appRouter.on('route:default', function(route) {
+        Backbone.router.on('route:default', function(route) {
             // entryを呼び出す
             entry.prepare(route);
         });
 
         // creditのコールバック
-        appRouter.on('route:credit', function() {
+        Backbone.router.on('route:credit', function() {
             // MVCの分離ができていない例
             $('.js-credit').show();
             alert('Presented by hosoyama-mediba.');
@@ -66,7 +66,10 @@ define(function(require, exports, module) {
         });
 
         // 監視を開始
-        Backbone.history.start();
+        Backbone.history.start({
+            pushState: true,
+            route: '/'
+        });
     };
 
     // ルータを外に出さないようにしてる

@@ -14,6 +14,9 @@ define([
     var FooterView = Backbone.View.extend({
         el: '.js-footer',
         fin: 'footer',
+        events: {
+            'click .pagination a': 'onPaginationClick'
+        },
         prepare: function() {
             return this.render();
         },
@@ -29,6 +32,13 @@ define([
             //console.log('foot:resize');
             // 他のVIEWに影響を与えずに個別にON/OFFできる
             Backbone.mediator.off('resize', this.onResize, this);
+        },
+        onPaginationClick: function(e) {
+            e.preventDefault();
+            var $this = $(e.currentTarget);
+
+            // pushState
+            Backbone.router.navigate($this.attr('href'), true);
         }
     });
 
