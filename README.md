@@ -55,12 +55,13 @@ Viewは遅延読み込み等があり、一回DOMを構築して終わりでは�
  * デフォルトではView間でイベントのやり取りはできない
 
 * __Backbone.Router__
- * HTML5のpushStateを使ってSPA(SinglePageApplication)を簡単に作れちゃう
- * サンプルあり
+ * hashchangeかpopStateを監視してイベント通知してくれるのでSPA（Single Page Application）作るのに便利
+ * hashchange版のサンプルあり
+ * pushStateを使うとpjaxなサイトにできる
 
 * __Backbone.History__
- * Routerの内部で使っている履歴
- * View内で移動してもブラウザの履歴に入るので戻るボタンで戻れる
+ * Routerがいろいろ操作してくれる履歴
+ * 監視を開始したら自分で使うことはあまりない
 
 ## サンプル
 
