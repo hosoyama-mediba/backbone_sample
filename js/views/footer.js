@@ -15,7 +15,8 @@ define([
         el: '.js-footer',
         fin: 'footer',
         events: {
-            'click .pagination a': 'onPaginationClick'
+            'click .pagination a': 'onPaginationClick',
+            'click .credit a': 'onPaginationClick'
         },
         prepare: function() {
             return this.render();
