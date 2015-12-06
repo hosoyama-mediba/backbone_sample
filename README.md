@@ -69,6 +69,8 @@ https://github.com/hosoyama-mediba/backbone_sample
 ### ファイル・ディレクトリ構造
 ```tree
 backbone_sample
+├── .gitignore
+├── .htaccess
 ├── index.html
 ├── css
 │   └── .gitkeep
