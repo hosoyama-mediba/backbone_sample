@@ -63,4 +63,45 @@ Viewは遅延読み込み等があり、一回DOMを構築して終わりでは�
  * View内で移動してもブラウザの履歴に入るので戻るボタンで戻れる
 
 ## サンプル
+
+### リポジトリ
 https://github.com/hosoyama-mediba/backbone_sample
+
+### ファイル・ディレクト構造
+```tree
+backbone_sample
+├── index.html
+├── css
+│   └── .gitkeep
+├── img
+│   └── .gitkeep
+├── js
+│   ├── main.js
+│   ├── app.js
+│   ├── libs
+│   │   ├── backbone.js
+│   │   ├── handlebars.js
+│   │   ├── hbars.js
+│   │   ├── jquery.js
+│   │   ├── require.js
+│   │   ├── text.js
+│   │   └── underscore.js
+│   ├── collections
+│   │   └── .gitkeep
+│   ├── models
+│   │   └── ua.js
+│   ├── views
+│   │   ├── entry.js
+│   │   ├── header.js
+│   │   ├── body.js
+│   │   ├── footer.js
+│   │   ├── finish.js
+│   │   └── super.js
+│   └── templates
+│        ├── header.html
+│        ├── body.html
+│        └── footer.html
+├── favicon.ico
+├── LICENSE
+└── README.md
+```
