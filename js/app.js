@@ -15,7 +15,7 @@ define(function(require, exports, module) {
         FooterView = require('views/footer'),
         FinishView = require('views/finish');
 
-    // ルータ設定（pushStateに対応できる）
+    // ルータ設定（URLの監視して通知してくれる人）
     var AppRouter = Backbone.Router.extend({
         routes: {
             credit: 'credit',
@@ -23,7 +23,7 @@ define(function(require, exports, module) {
         }
     });
 
-    // View間でやり取りできるように拡張
+    // 異View間でやり取りできるようにBackboneオブジェクトを利用する
     Backbone.app = {
         // 名前
         name: 'app',
@@ -54,13 +54,10 @@ define(function(require, exports, module) {
     // ルータの初期化
     var initialize = function() {
 
-        // defaultのコールバック
-        Backbone.app.router.on('route:default', function(route) {
-            // entryを呼び出す
-            entry.prepare(route);
-        });
+        // default
+        Backbone.app.router.on('route:default', entry.prepare);
 
-        // creditのコールバック
+        // credit
         Backbone.app.router.on('route:credit', function() {
             // MVCの分離ができていない例
             $('.js-credit').show();
