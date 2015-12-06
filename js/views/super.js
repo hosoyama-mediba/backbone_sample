@@ -1,6 +1,8 @@
-// views/super
-// SuperView
-
+/**
+ * @fileOverview Viewの親クラス
+ * @file         views/super
+ * @author       Terunobu Hosoyama <hosoyama@mediba.jp>
+ */
 define([
     'jquery',
     'underscore',
