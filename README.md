@@ -67,7 +67,7 @@ Viewは遅延読み込み等があり、一回DOMを構築して終わりでは�
 ### リポジトリ
 https://github.com/hosoyama-mediba/backbone_sample
 
-### ファイル・ディレクト構造
+### ファイル・ディレクトリ構造
 ```tree
 backbone_sample
 ├── index.html
