@@ -59,6 +59,7 @@ define(function(require, exports, module) {
 
         // creditのコールバック
         appRouter.on('route:credit', function() {
+            // MVCの分離ができていない例
             $('.js-credit').show();
             alert('Presented by hosoyama-mediba.');
             $('.js-credit').hide();
