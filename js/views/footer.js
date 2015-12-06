@@ -23,7 +23,7 @@ define([
         render: function() {
             var _this = this;
             this.$el.hide().html(template).fadeIn('normal', function() {
-                Backbone.mediator.on('resize', _this.onResize, this);
+                Backbone.app.event.on('resize', _this.onResize, this);
                 _this.finalize();
             });
             return this;
@@ -31,14 +31,14 @@ define([
         onResize: function(e) {
             //console.log('foot:resize');
             // 他のVIEWに影響を与えずに個別にON/OFFできる
-            Backbone.mediator.off('resize', this.onResize, this);
+            Backbone.app.event.off('resize', this.onResize, this);
         },
         onPaginationClick: function(e) {
             e.preventDefault();
             var $this = $(e.currentTarget);
 
             // pushState
-            Backbone.router.navigate($this.attr('href'), true);
+            Backbone.app.router.navigate($this.attr('href'), true);
         }
     });
 

@@ -22,13 +22,16 @@ define(function(require, exports, module) {
             '*route': 'default'
         }
     });
-    Backbone.router = new AppRouter();
 
-    // 名前を付けておく
-    Backbone.appName = 'portal';
-
-    // 異なるView間でイベントのやり取りをするためのオブジェクト
-    Backbone.mediator = _.extend({}, Backbone.Events);
+    // View間でやり取りできるように拡張
+    Backbone.app = {
+        // 名前
+        name: 'app',
+        // ルータ
+        router:  new AppRouter(),
+        // イベント
+        event: _.extend({}, Backbone.Events)
+    };
 
     // SuperViewを親クラスとしてMixinする（気をつけないと危険）
     _.extend(Backbone.View.prototype, SuperView);
@@ -52,13 +55,13 @@ define(function(require, exports, module) {
     var initialize = function() {
 
         // defaultのコールバック
-        Backbone.router.on('route:default', function(route) {
+        Backbone.app.router.on('route:default', function(route) {
             // entryを呼び出す
             entry.prepare(route);
         });
 
         // creditのコールバック
-        Backbone.router.on('route:credit', function() {
+        Backbone.app.router.on('route:credit', function() {
             // MVCの分離ができていない例
             $('.js-credit').show();
             alert('Presented by hosoyama-mediba.');

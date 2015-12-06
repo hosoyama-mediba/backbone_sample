@@ -62,7 +62,7 @@ define([
                 }
                 timerId = setTimeout(function() {
                     // これを監視すれば調整済みのイベントを受け取れる
-                    Backbone.mediator.trigger('resize', e);
+                    Backbone.app.event.trigger('resize', e);
                 }, 200);
             });
 

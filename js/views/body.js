@@ -25,7 +25,7 @@ define([
             console.log(ua.iOS ? 'iOS' : 'not iOS');
 
             this.$el.hide().html(template).fadeIn('normal', function() {
-                Backbone.mediator.on('resize', _this.onResize, this);
+                Backbone.app.event.on('resize', _this.onResize, this);
                 _this.finalize();
             });
             return this;

@@ -18,14 +18,14 @@ define([
             _.bindAll(this, 'prepare', 'render', 'finalize');
             if (options && 'on' in options) {
                 // イベント監視
-                var fireEvent = Backbone.appName + ':' + options.on;
-                Backbone.mediator.on(fireEvent, this.prepare);
+                var fireEvent = Backbone.app.name + ':' + options.on;
+                Backbone.app.event.on(fireEvent, this.prepare);
             }
         },
         // 終わったら呼ぶ
         finalize: function() {
             // 終わったよイベント発火
-            Backbone.mediator.trigger(Backbone.appName + ':' + this.fin);
+            Backbone.app.event.trigger(Backbone.app.name + ':' + this.fin);
             return this;
         },
         // 描画のための準備
