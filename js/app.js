@@ -55,7 +55,7 @@ define(function(require, exports, module) {
     var initialize = function() {
 
         // default
-        Backbone.app.router.on('route:default', entry.prepare);
+        Backbone.app.router.on('route:default', entry.prepare, entry);
 
         // credit
         Backbone.app.router.on('route:credit', function() {
