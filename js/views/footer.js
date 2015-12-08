@@ -40,6 +40,10 @@ define([
 
             // pushState
             Backbone.app.router.navigate($this.attr('href'), true);
+        },
+        onCredit: function() {
+            alert('Presented by hosoyama-mediba.');
+            Backbone.app.router.navigate('/');
         }
     });
 
