@@ -44,6 +44,7 @@ Viewは遅延読み込み等があり、一回DOMを構築して終わりでは�
 * __Backbone.Model__
  * 「データ」の1単位
  * データの入出力（サーバとの通信）に関わる処理も担う
+ * RESTFul APIをサポートしている
 
 * __Backbone.Collection__
  * Modelのコレクションオブジェクト
@@ -61,7 +62,13 @@ Viewは遅延読み込み等があり、一回DOMを構築して終わりでは�
  * Routerが操作してくれる履歴
  * 監視を開始したら自分で使うことはあまりない
 
+## 参考
+
+[これからBackbone.jsを始めるならこれ読んどけばOKという記事たち - Qiita](http://qiita.com/kakkunpakkun/items/8e1cfeba6230a5d88ed9)
+
 ## サンプルコード
+
+ライブラリのソースを読みながら我流で作ってみたので、もっと良い書き方とかはあるかもしれない。
 
 ### リポジトリ
 https://github.com/hosoyama-mediba/backbone_sample
