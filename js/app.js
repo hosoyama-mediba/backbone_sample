@@ -58,12 +58,7 @@ define(function(require, exports, module) {
         Backbone.app.router.on('route:default', entry.prepare, entry);
 
         // credit
-        Backbone.app.router.on('route:credit', function() {
-            // MVCの分離ができていない例
-            $('.js-credit').show();
-            alert('Presented by hosoyama-mediba.');
-            $('.js-credit').hide();
-        });
+        Backbone.app.router.on('route:credit', footer.onCredit, footer);
 
         // 監視を開始
         Backbone.history.start({
