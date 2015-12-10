@@ -58,10 +58,6 @@ Viewは遅延読み込み等があり、一回DOMを構築して終わりでは�
  * hashchangeかpopStateを監視して通知してくれるのでSPA（Single Page Application）作るのに便利
  * popState版のサンプルあり
 
-* __Backbone.History__
- * Routerが操作してくれる履歴
- * 監視を開始したら自分で使うことはあまりない
-
 ## 参考
 
 [これからBackbone.jsを始めるならこれ読んどけばOKという記事たち - Qiita](http://qiita.com/kakkunpakkun/items/8e1cfeba6230a5d88ed9)
